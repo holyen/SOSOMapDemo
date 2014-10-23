@@ -1,0 +1,613 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		BC64627B19F8A02600D6DB9B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = BC64627A19F8A02600D6DB9B /* main.m */; };
+		BC64627E19F8A02600D6DB9B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BC64627D19F8A02600D6DB9B /* AppDelegate.m */; };
+		BC64628419F8A02600D6DB9B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BC64628219F8A02600D6DB9B /* Main.storyboard */; };
+		BC64628619F8A02600D6DB9B /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BC64628519F8A02600D6DB9B /* Images.xcassets */; };
+		BC64628919F8A02600D6DB9B /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = BC64628719F8A02600D6DB9B /* LaunchScreen.xib */; };
+		BC64629519F8A02700D6DB9B /* SOSOMapDemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = BC64629419F8A02700D6DB9B /* SOSOMapDemoTests.m */; };
+		BC6462CB19F8A08100D6DB9B /* mapconfig.dat in Resources */ = {isa = PBXBuildFile; fileRef = BC6462C619F8A08000D6DB9B /* mapconfig.dat */; };
+		BC6462CC19F8A08100D6DB9B /* TencentMapAPI.bundle in Resources */ = {isa = PBXBuildFile; fileRef = BC6462C719F8A08000D6DB9B /* TencentMapAPI.bundle */; };
+		BC6462CD19F8A08100D6DB9B /* TencentStreetView.bundle in Resources */ = {isa = PBXBuildFile; fileRef = BC6462C819F8A08000D6DB9B /* TencentStreetView.bundle */; };
+		BC6462CF19F8A0BD00D6DB9B /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BC6462CE19F8A0BD00D6DB9B /* SystemConfiguration.framework */; };
+		BC6462D119F8A0C300D6DB9B /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BC6462D019F8A0C300D6DB9B /* CoreText.framework */; };
+		BC6462D319F8A0CB00D6DB9B /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BC6462D219F8A0CB00D6DB9B /* CoreMotion.framework */; };
+		BC6462D519F8A0D500D6DB9B /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BC6462D419F8A0D500D6DB9B /* QuartzCore.framework */; };
+		BC6462D719F8A0DD00D6DB9B /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BC6462D619F8A0DD00D6DB9B /* MapKit.framework */; };
+		BC6462D919F8A0E500D6DB9B /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BC6462D819F8A0E500D6DB9B /* OpenGLES.framework */; };
+		BC6462DB19F8A0F000D6DB9B /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = BC6462DA19F8A0F000D6DB9B /* libz.dylib */; };
+		BC6462DD19F8A0F900D6DB9B /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BC6462DC19F8A0F900D6DB9B /* CoreLocation.framework */; };
+		BC6462DF19F8A10000D6DB9B /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BC6462DE19F8A10000D6DB9B /* UIKit.framework */; };
+		BC6462E119F8A10800D6DB9B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BC6462E019F8A10800D6DB9B /* Foundation.framework */; };
+		BC6462E319F8A11100D6DB9B /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BC6462E219F8A11100D6DB9B /* CoreGraphics.framework */; };
+		BC6462E819F8A9B600D6DB9B /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BC6462E619F8A9B600D6DB9B /* MainViewController.m */; };
+		BC6462E919F8A9B600D6DB9B /* MainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BC6462E719F8A9B600D6DB9B /* MainViewController.xib */; };
+		BC95237219F8C3F500DE91C3 /* libTencentMapAPILib.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BC95237119F8C3F500DE91C3 /* libTencentMapAPILib.a */; };
+		BC95237419F8CFB000DE91C3 /* libstdc++.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = BC95237319F8CFB000DE91C3 /* libstdc++.dylib */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		BC64628F19F8A02700D6DB9B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BC64626D19F8A02600D6DB9B /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = BC64627419F8A02600D6DB9B;
+			remoteInfo = SOSOMapDemo;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		BC64627519F8A02600D6DB9B /* SOSOMapDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SOSOMapDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		BC64627919F8A02600D6DB9B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BC64627A19F8A02600D6DB9B /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		BC64627C19F8A02600D6DB9B /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		BC64627D19F8A02600D6DB9B /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		BC64628319F8A02600D6DB9B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		BC64628519F8A02600D6DB9B /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		BC64628819F8A02600D6DB9B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		BC64628E19F8A02700D6DB9B /* SOSOMapDemoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SOSOMapDemoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		BC64629319F8A02700D6DB9B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BC64629419F8A02700D6DB9B /* SOSOMapDemoTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SOSOMapDemoTests.m; sourceTree = "<group>"; };
+		BC6462A119F8A08000D6DB9B /* QAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QAnnotation.h; sourceTree = "<group>"; };
+		BC6462A219F8A08000D6DB9B /* QAnnotationView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QAnnotationView.h; sourceTree = "<group>"; };
+		BC6462A319F8A08000D6DB9B /* QAppKeyCheck.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QAppKeyCheck.h; sourceTree = "<group>"; };
+		BC6462A419F8A08000D6DB9B /* QCircle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QCircle.h; sourceTree = "<group>"; };
+		BC6462A519F8A08000D6DB9B /* QCircleView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QCircleView.h; sourceTree = "<group>"; };
+		BC6462A619F8A08000D6DB9B /* QGeocoder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QGeocoder.h; sourceTree = "<group>"; };
+		BC6462A719F8A08000D6DB9B /* QGeometry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QGeometry.h; sourceTree = "<group>"; };
+		BC6462A819F8A08000D6DB9B /* QMapKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QMapKit.h; sourceTree = "<group>"; };
+		BC6462A919F8A08000D6DB9B /* QMapView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QMapView.h; sourceTree = "<group>"; };
+		BC6462AA19F8A08000D6DB9B /* QMultiPoint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QMultiPoint.h; sourceTree = "<group>"; };
+		BC6462AB19F8A08000D6DB9B /* QOverlay.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QOverlay.h; sourceTree = "<group>"; };
+		BC6462AC19F8A08000D6DB9B /* QOverlayPathView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QOverlayPathView.h; sourceTree = "<group>"; };
+		BC6462AD19F8A08000D6DB9B /* QOverlayView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QOverlayView.h; sourceTree = "<group>"; };
+		BC6462AE19F8A08000D6DB9B /* QOverViewRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QOverViewRequest.h; sourceTree = "<group>"; };
+		BC6462AF19F8A08000D6DB9B /* QPinAnnotationView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QPinAnnotationView.h; sourceTree = "<group>"; };
+		BC6462B019F8A08000D6DB9B /* QPlacemark.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QPlacemark.h; sourceTree = "<group>"; };
+		BC6462B119F8A08000D6DB9B /* QPointAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QPointAnnotation.h; sourceTree = "<group>"; };
+		BC6462B219F8A08000D6DB9B /* QPoiSearch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QPoiSearch.h; sourceTree = "<group>"; };
+		BC6462B319F8A08000D6DB9B /* QPolygon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QPolygon.h; sourceTree = "<group>"; };
+		BC6462B419F8A08000D6DB9B /* QPolygonView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QPolygonView.h; sourceTree = "<group>"; };
+		BC6462B519F8A08000D6DB9B /* QPolyline.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QPolyline.h; sourceTree = "<group>"; };
+		BC6462B619F8A08000D6DB9B /* QPolylineView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QPolylineView.h; sourceTree = "<group>"; };
+		BC6462B719F8A08000D6DB9B /* QReverseGeocoder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QReverseGeocoder.h; sourceTree = "<group>"; };
+		BC6462B819F8A08000D6DB9B /* QRouteSearch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QRouteSearch.h; sourceTree = "<group>"; };
+		BC6462B919F8A08000D6DB9B /* QSearch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QSearch.h; sourceTree = "<group>"; };
+		BC6462BA19F8A08000D6DB9B /* QShape.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QShape.h; sourceTree = "<group>"; };
+		BC6462BB19F8A08000D6DB9B /* QStreetView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QStreetView.h; sourceTree = "<group>"; };
+		BC6462BC19F8A08000D6DB9B /* QStreetViewKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QStreetViewKit.h; sourceTree = "<group>"; };
+		BC6462BD19F8A08000D6DB9B /* QStreetViewOverlay.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QStreetViewOverlay.h; sourceTree = "<group>"; };
+		BC6462BE19F8A08000D6DB9B /* QTypes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QTypes.h; sourceTree = "<group>"; };
+		BC6462BF19F8A08000D6DB9B /* QTypes_inc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QTypes_inc.h; sourceTree = "<group>"; };
+		BC6462C019F8A08000D6DB9B /* QUserLocation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QUserLocation.h; sourceTree = "<group>"; };
+		BC6462C619F8A08000D6DB9B /* mapconfig.dat */ = {isa = PBXFileReference; lastKnownFileType = file; path = mapconfig.dat; sourceTree = "<group>"; };
+		BC6462C719F8A08000D6DB9B /* TencentMapAPI.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = TencentMapAPI.bundle; sourceTree = "<group>"; };
+		BC6462C819F8A08000D6DB9B /* TencentStreetView.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = TencentStreetView.bundle; sourceTree = "<group>"; };
+		BC6462CE19F8A0BD00D6DB9B /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		BC6462D019F8A0C300D6DB9B /* CoreText.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreText.framework; path = System/Library/Frameworks/CoreText.framework; sourceTree = SDKROOT; };
+		BC6462D219F8A0CB00D6DB9B /* CoreMotion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMotion.framework; path = System/Library/Frameworks/CoreMotion.framework; sourceTree = SDKROOT; };
+		BC6462D419F8A0D500D6DB9B /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		BC6462D619F8A0DD00D6DB9B /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		BC6462D819F8A0E500D6DB9B /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
+		BC6462DA19F8A0F000D6DB9B /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
+		BC6462DC19F8A0F900D6DB9B /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		BC6462DE19F8A10000D6DB9B /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		BC6462E019F8A10800D6DB9B /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		BC6462E219F8A11100D6DB9B /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		BC6462E519F8A9B600D6DB9B /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
+		BC6462E619F8A9B600D6DB9B /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
+		BC6462E719F8A9B600D6DB9B /* MainViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainViewController.xib; sourceTree = "<group>"; };
+		BC95237119F8C3F500DE91C3 /* libTencentMapAPILib.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libTencentMapAPILib.a; sourceTree = "<group>"; };
+		BC95237319F8CFB000DE91C3 /* libstdc++.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libstdc++.dylib"; path = "usr/lib/libstdc++.dylib"; sourceTree = SDKROOT; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		BC64627219F8A02600D6DB9B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BC95237419F8CFB000DE91C3 /* libstdc++.dylib in Frameworks */,
+				BC6462E319F8A11100D6DB9B /* CoreGraphics.framework in Frameworks */,
+				BC6462E119F8A10800D6DB9B /* Foundation.framework in Frameworks */,
+				BC6462DF19F8A10000D6DB9B /* UIKit.framework in Frameworks */,
+				BC6462DD19F8A0F900D6DB9B /* CoreLocation.framework in Frameworks */,
+				BC6462DB19F8A0F000D6DB9B /* libz.dylib in Frameworks */,
+				BC6462D919F8A0E500D6DB9B /* OpenGLES.framework in Frameworks */,
+				BC6462D719F8A0DD00D6DB9B /* MapKit.framework in Frameworks */,
+				BC95237219F8C3F500DE91C3 /* libTencentMapAPILib.a in Frameworks */,
+				BC6462D519F8A0D500D6DB9B /* QuartzCore.framework in Frameworks */,
+				BC6462D319F8A0CB00D6DB9B /* CoreMotion.framework in Frameworks */,
+				BC6462D119F8A0C300D6DB9B /* CoreText.framework in Frameworks */,
+				BC6462CF19F8A0BD00D6DB9B /* SystemConfiguration.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BC64628B19F8A02700D6DB9B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		BC64626C19F8A02600D6DB9B = {
+			isa = PBXGroup;
+			children = (
+				BC95237319F8CFB000DE91C3 /* libstdc++.dylib */,
+				BC6462E219F8A11100D6DB9B /* CoreGraphics.framework */,
+				BC6462E019F8A10800D6DB9B /* Foundation.framework */,
+				BC6462DE19F8A10000D6DB9B /* UIKit.framework */,
+				BC6462DC19F8A0F900D6DB9B /* CoreLocation.framework */,
+				BC6462DA19F8A0F000D6DB9B /* libz.dylib */,
+				BC6462D819F8A0E500D6DB9B /* OpenGLES.framework */,
+				BC6462D619F8A0DD00D6DB9B /* MapKit.framework */,
+				BC6462D419F8A0D500D6DB9B /* QuartzCore.framework */,
+				BC6462D219F8A0CB00D6DB9B /* CoreMotion.framework */,
+				BC6462D019F8A0C300D6DB9B /* CoreText.framework */,
+				BC6462CE19F8A0BD00D6DB9B /* SystemConfiguration.framework */,
+				BC64627719F8A02600D6DB9B /* SOSOMapDemo */,
+				BC64629119F8A02700D6DB9B /* SOSOMapDemoTests */,
+				BC64627619F8A02600D6DB9B /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		BC64627619F8A02600D6DB9B /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				BC64627519F8A02600D6DB9B /* SOSOMapDemo.app */,
+				BC64628E19F8A02700D6DB9B /* SOSOMapDemoTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		BC64627719F8A02600D6DB9B /* SOSOMapDemo */ = {
+			isa = PBXGroup;
+			children = (
+				BC64629E19F8A08000D6DB9B /* libs */,
+				BC64627C19F8A02600D6DB9B /* AppDelegate.h */,
+				BC64627D19F8A02600D6DB9B /* AppDelegate.m */,
+				BC64628219F8A02600D6DB9B /* Main.storyboard */,
+				BC64628519F8A02600D6DB9B /* Images.xcassets */,
+				BC64628719F8A02600D6DB9B /* LaunchScreen.xib */,
+				BC64627819F8A02600D6DB9B /* Supporting Files */,
+				BC6462E519F8A9B600D6DB9B /* MainViewController.h */,
+				BC6462E619F8A9B600D6DB9B /* MainViewController.m */,
+				BC6462E719F8A9B600D6DB9B /* MainViewController.xib */,
+			);
+			path = SOSOMapDemo;
+			sourceTree = "<group>";
+		};
+		BC64627819F8A02600D6DB9B /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				BC64627919F8A02600D6DB9B /* Info.plist */,
+				BC64627A19F8A02600D6DB9B /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		BC64629119F8A02700D6DB9B /* SOSOMapDemoTests */ = {
+			isa = PBXGroup;
+			children = (
+				BC64629419F8A02700D6DB9B /* SOSOMapDemoTests.m */,
+				BC64629219F8A02700D6DB9B /* Supporting Files */,
+			);
+			path = SOSOMapDemoTests;
+			sourceTree = "<group>";
+		};
+		BC64629219F8A02700D6DB9B /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				BC64629319F8A02700D6DB9B /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		BC64629E19F8A08000D6DB9B /* libs */ = {
+			isa = PBXGroup;
+			children = (
+				BC64629F19F8A08000D6DB9B /* SOSOMap */,
+			);
+			path = libs;
+			sourceTree = "<group>";
+		};
+		BC64629F19F8A08000D6DB9B /* SOSOMap */ = {
+			isa = PBXGroup;
+			children = (
+				BC6462A019F8A08000D6DB9B /* inc */,
+				BC6462C119F8A08000D6DB9B /* lib */,
+				BC6462C619F8A08000D6DB9B /* mapconfig.dat */,
+				BC6462C719F8A08000D6DB9B /* TencentMapAPI.bundle */,
+				BC6462C819F8A08000D6DB9B /* TencentStreetView.bundle */,
+			);
+			path = SOSOMap;
+			sourceTree = "<group>";
+		};
+		BC6462A019F8A08000D6DB9B /* inc */ = {
+			isa = PBXGroup;
+			children = (
+				BC6462A119F8A08000D6DB9B /* QAnnotation.h */,
+				BC6462A219F8A08000D6DB9B /* QAnnotationView.h */,
+				BC6462A319F8A08000D6DB9B /* QAppKeyCheck.h */,
+				BC6462A419F8A08000D6DB9B /* QCircle.h */,
+				BC6462A519F8A08000D6DB9B /* QCircleView.h */,
+				BC6462A619F8A08000D6DB9B /* QGeocoder.h */,
+				BC6462A719F8A08000D6DB9B /* QGeometry.h */,
+				BC6462A819F8A08000D6DB9B /* QMapKit.h */,
+				BC6462A919F8A08000D6DB9B /* QMapView.h */,
+				BC6462AA19F8A08000D6DB9B /* QMultiPoint.h */,
+				BC6462AB19F8A08000D6DB9B /* QOverlay.h */,
+				BC6462AC19F8A08000D6DB9B /* QOverlayPathView.h */,
+				BC6462AD19F8A08000D6DB9B /* QOverlayView.h */,
+				BC6462AE19F8A08000D6DB9B /* QOverViewRequest.h */,
+				BC6462AF19F8A08000D6DB9B /* QPinAnnotationView.h */,
+				BC6462B019F8A08000D6DB9B /* QPlacemark.h */,
+				BC6462B119F8A08000D6DB9B /* QPointAnnotation.h */,
+				BC6462B219F8A08000D6DB9B /* QPoiSearch.h */,
+				BC6462B319F8A08000D6DB9B /* QPolygon.h */,
+				BC6462B419F8A08000D6DB9B /* QPolygonView.h */,
+				BC6462B519F8A08000D6DB9B /* QPolyline.h */,
+				BC6462B619F8A08000D6DB9B /* QPolylineView.h */,
+				BC6462B719F8A08000D6DB9B /* QReverseGeocoder.h */,
+				BC6462B819F8A08000D6DB9B /* QRouteSearch.h */,
+				BC6462B919F8A08000D6DB9B /* QSearch.h */,
+				BC6462BA19F8A08000D6DB9B /* QShape.h */,
+				BC6462BB19F8A08000D6DB9B /* QStreetView.h */,
+				BC6462BC19F8A08000D6DB9B /* QStreetViewKit.h */,
+				BC6462BD19F8A08000D6DB9B /* QStreetViewOverlay.h */,
+				BC6462BE19F8A08000D6DB9B /* QTypes.h */,
+				BC6462BF19F8A08000D6DB9B /* QTypes_inc.h */,
+				BC6462C019F8A08000D6DB9B /* QUserLocation.h */,
+			);
+			path = inc;
+			sourceTree = "<group>";
+		};
+		BC6462C119F8A08000D6DB9B /* lib */ = {
+			isa = PBXGroup;
+			children = (
+				BC95237119F8C3F500DE91C3 /* libTencentMapAPILib.a */,
+			);
+			path = lib;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		BC64627419F8A02600D6DB9B /* SOSOMapDemo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BC64629819F8A02700D6DB9B /* Build configuration list for PBXNativeTarget "SOSOMapDemo" */;
+			buildPhases = (
+				BC64627119F8A02600D6DB9B /* Sources */,
+				BC64627219F8A02600D6DB9B /* Frameworks */,
+				BC64627319F8A02600D6DB9B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SOSOMapDemo;
+			productName = SOSOMapDemo;
+			productReference = BC64627519F8A02600D6DB9B /* SOSOMapDemo.app */;
+			productType = "com.apple.product-type.application";
+		};
+		BC64628D19F8A02700D6DB9B /* SOSOMapDemoTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BC64629B19F8A02700D6DB9B /* Build configuration list for PBXNativeTarget "SOSOMapDemoTests" */;
+			buildPhases = (
+				BC64628A19F8A02700D6DB9B /* Sources */,
+				BC64628B19F8A02700D6DB9B /* Frameworks */,
+				BC64628C19F8A02700D6DB9B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				BC64629019F8A02700D6DB9B /* PBXTargetDependency */,
+			);
+			name = SOSOMapDemoTests;
+			productName = SOSOMapDemoTests;
+			productReference = BC64628E19F8A02700D6DB9B /* SOSOMapDemoTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		BC64626D19F8A02600D6DB9B /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0610;
+				ORGANIZATIONNAME = holyenzou;
+				TargetAttributes = {
+					BC64627419F8A02600D6DB9B = {
+						CreatedOnToolsVersion = 6.1;
+					};
+					BC64628D19F8A02700D6DB9B = {
+						CreatedOnToolsVersion = 6.1;
+						TestTargetID = BC64627419F8A02600D6DB9B;
+					};
+				};
+			};
+			buildConfigurationList = BC64627019F8A02600D6DB9B /* Build configuration list for PBXProject "SOSOMapDemo" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = BC64626C19F8A02600D6DB9B;
+			productRefGroup = BC64627619F8A02600D6DB9B /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				BC64627419F8A02600D6DB9B /* SOSOMapDemo */,
+				BC64628D19F8A02700D6DB9B /* SOSOMapDemoTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		BC64627319F8A02600D6DB9B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BC6462CB19F8A08100D6DB9B /* mapconfig.dat in Resources */,
+				BC6462CD19F8A08100D6DB9B /* TencentStreetView.bundle in Resources */,
+				BC64628419F8A02600D6DB9B /* Main.storyboard in Resources */,
+				BC64628919F8A02600D6DB9B /* LaunchScreen.xib in Resources */,
+				BC6462CC19F8A08100D6DB9B /* TencentMapAPI.bundle in Resources */,
+				BC6462E919F8A9B600D6DB9B /* MainViewController.xib in Resources */,
+				BC64628619F8A02600D6DB9B /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BC64628C19F8A02700D6DB9B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		BC64627119F8A02600D6DB9B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BC64627E19F8A02600D6DB9B /* AppDelegate.m in Sources */,
+				BC64627B19F8A02600D6DB9B /* main.m in Sources */,
+				BC6462E819F8A9B600D6DB9B /* MainViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BC64628A19F8A02700D6DB9B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BC64629519F8A02700D6DB9B /* SOSOMapDemoTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		BC64629019F8A02700D6DB9B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = BC64627419F8A02600D6DB9B /* SOSOMapDemo */;
+			targetProxy = BC64628F19F8A02700D6DB9B /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		BC64628219F8A02600D6DB9B /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				BC64628319F8A02600D6DB9B /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		BC64628719F8A02600D6DB9B /* LaunchScreen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				BC64628819F8A02600D6DB9B /* Base */,
+			);
+			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		BC64629619F8A02700D6DB9B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		BC64629719F8A02700D6DB9B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		BC64629919F8A02700D6DB9B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_CXX_LIBRARY = "libc++";
+				INFOPLIST_FILE = SOSOMapDemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/SOSOMapDemo/libs/SOSOMap/lib",
+				);
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"-all_load",
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		BC64629A19F8A02700D6DB9B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_CXX_LIBRARY = "libc++";
+				INFOPLIST_FILE = SOSOMapDemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/SOSOMapDemo/libs/SOSOMap/lib",
+				);
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"-all_load",
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		BC64629C19F8A02700D6DB9B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = SOSOMapDemoTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SOSOMapDemo.app/SOSOMapDemo";
+			};
+			name = Debug;
+		};
+		BC64629D19F8A02700D6DB9B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = SOSOMapDemoTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SOSOMapDemo.app/SOSOMapDemo";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		BC64627019F8A02600D6DB9B /* Build configuration list for PBXProject "SOSOMapDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BC64629619F8A02700D6DB9B /* Debug */,
+				BC64629719F8A02700D6DB9B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BC64629819F8A02700D6DB9B /* Build configuration list for PBXNativeTarget "SOSOMapDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BC64629919F8A02700D6DB9B /* Debug */,
+				BC64629A19F8A02700D6DB9B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BC64629B19F8A02700D6DB9B /* Build configuration list for PBXNativeTarget "SOSOMapDemoTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BC64629C19F8A02700D6DB9B /* Debug */,
+				BC64629D19F8A02700D6DB9B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = BC64626D19F8A02600D6DB9B /* Project object */;
+}
