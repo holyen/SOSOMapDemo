@@ -29,11 +29,8 @@
     [super viewDidLoad];
 //    _mapView = [[QMapView alloc] initWithFrame:CGRectMake(0, 0, 320, 600)];
     _mapView.delegate = self;
-    [_mapView setShowsUserLocation:YES];
-    [_search busSearch:@"上海市"
-                 start:@"上海南站"
-                   end:@"张江高科"
-     withBusSearchType:QBusSearchShortCut];
+
+
 }
 
 - (void)showAlertView:(NSString*)title widthMessage:(NSString*)message
@@ -50,7 +47,7 @@
 - (void)notifyRouteSearchResult:(QRouteSearchResult *)routeSearchResult
 {
     QErrorCode errCode = [routeSearchResult errorCode];
-    NSLog(@"get bus res %i",errCode);
+    NSLog(@"get bus res %lu",(unsigned long)errCode);
     if (errCode == QRouteSearchResultBusList) {
         
         NSMutableString* msg = [[NSMutableString alloc] init];
@@ -61,7 +58,7 @@
         NSInteger count = 0;
         for (QPlaceInfo* info in [choice startList]) {
             
-            [msg appendFormat:@"%d.name=%@,address=%@,coor={%lf,%lf}\n",count,
+            [msg appendFormat:@"%ld.name=%@,address=%@,coor={%lf,%lf}\n",(long)count,
              info.name,info.address,info.coordinate.longitude,info.coordinate.latitude];
             ++count;
         }
@@ -85,7 +82,7 @@
         NSArray* endList = choice.endList;
         
         if (startList.count > 0 && endList.count > 0 ) {
-            [_search busSearchWithLocation:@"北京"
+            [_search busSearchWithLocation:@"上海"
                                      start:  [startList objectAtIndex:0]
                                        end:[endList objectAtIndex:0]
                          withBusSearchType:QBusSearchShortCut];
@@ -147,7 +144,7 @@
         QPolylineView* polylineView = [[QPolylineView alloc] initWithPolyline:overlay];
         
         polylineView.lineWidth = 2.0;
-        polylineView.strokeColor =  [UIColor purpleColor];//[[UIColor redColor] colorWithAlphaComponent:0.5];
+        polylineView.strokeColor =  [UIColor blueColor];//[[UIColor redColor] colorWithAlphaComponent:0.5];
         
         return polylineView;
     }
@@ -167,11 +164,30 @@
 - (void)mapView:(QMapView *)mapView didUpdateUserLocation:(QUserLocation *)userLocation
 {
     //刷新位置
+    NSLog(@"userlocation chanage lo=%f,lat= %f",
+          [userLocation location].coordinate.longitude,
+          [userLocation location].coordinate.latitude);
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
+}
+
+- (IBAction)myPositionButtonTap:(id)sender {
+    [_mapView setShowsUserLocation:YES];
+
+//    QPointAnnotation* annotation = [[QPointAnnotation alloc]init];
+//    [annotation setCoordinate:CLLocationCoordinate2DMake(31.11, 121.59)];
+//    [annotation setTitle:@"银科大厦"];
+//    [annotation setSubtitle:@"北京市区海淀区苏州街银科大厦"];
+    
+    //[_mapView addAnnotation:annotation];
+    [_search busSearch:@"上海市"
+                 start:@"上海南站"
+                   end:@"张江高科"
+     withBusSearchType:QBusSearchShortCut];
+
 }
 
 @end

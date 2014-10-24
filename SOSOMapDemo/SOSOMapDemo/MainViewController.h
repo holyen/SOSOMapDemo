@@ -18,5 +18,6 @@
 
 @property(nonatomic, retain) IBOutlet QMapView* mapView;
 @property(nonatomic, retain) QSearch* search;
+- (IBAction)myPositionButtonTap:(id)sender;
 
 @end
