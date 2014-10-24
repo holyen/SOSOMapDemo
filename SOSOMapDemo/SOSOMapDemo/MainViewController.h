@@ -8,9 +8,15 @@
 
 #import <UIKit/UIKit.h>
 #import "QMapKit.h"
+#import "QSearch.h"
 
+@interface MainViewController : UIViewController<QSearchDelegate, QMapViewDelegate>
+{
+    IBOutlet QMapView* _mapView;
+    QSearch* _search;
+}
 
-@interface MainViewController : UIViewController
-@property(nonatomic, retain)IBOutlet QMapView* mapView;
+@property(nonatomic, retain) IBOutlet QMapView* mapView;
+@property(nonatomic, retain) QSearch* search;
 
 @end
