@@ -21,16 +21,60 @@
     if (self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil]) {
         _search = [[QSearch alloc] init];
         _search.delegate = self;
+        //_destinationCoord = CLLocationCoordinate2DMake(31.00, 121.24);
+        _destinationPlaceInfo = [[QPlaceInfo alloc] init];
+        _destinationPlaceInfo.name = @"小茜泾路";
+        _destinationPlaceInfo.address = @"上海市松江区";
+        _destinationPlaceInfo.coordinate = CLLocationCoordinate2DMake(30.9910130000, 121.2395890000);
+        _destinationPlaceInfo.isCity = NO;
+        
+        _routePlan = [[QRoutePlan alloc] init];
+        //创建CLLocationManager对象
+        self.locationManager = [[CLLocationManager alloc] init];
+        //设置代理为自己
+        self.locationManager.delegate = self;
     }
     return self;
 }
 
+- (void)locationManager:(CLLocationManager *)manager
+    didUpdateToLocation:(CLLocation *)newLocation
+           fromLocation:(CLLocation *)oldLocation
+{
+    //刷新位置
+    NSLog(@"userlocation chanage lo=%f,lat= %f",
+          newLocation.coordinate.longitude,
+          newLocation.coordinate.latitude);
+    CLLocationCoordinate2D locationCoordinate2d = CLLocationCoordinate2DMake(newLocation.coordinate.latitude, newLocation.coordinate.longitude);
+    _mapView.centerCoordinate = locationCoordinate2d;
+    _reverseGeocoder = [[QReverseGeocoder alloc] initWithCoordinate:locationCoordinate2d];
+    _reverseGeocoder.delegate = self;
+    [_reverseGeocoder start];
+}
+
+
 - (void)viewDidLoad {
     [super viewDidLoad];
 //    _mapView = [[QMapView alloc] initWithFrame:CGRectMake(0, 0, 320, 600)];
+    NSLog(@"map's width:%f &&& map's height:%f", _mapView.frame.size.width, _mapView.frame.size.height);
+    NSLog(@"self.view's widht : %f height : %f", self.view.frame.size.width, self.view.frame.size.height);
     _mapView.delegate = self;
+    [_mapView setShowsUserLocation:YES];
+    [self.locationManager startUpdatingLocation];
+    
+    //_routePlan bus
+    //[self performSelector:@selector(updateUserLocation) withObject:nil afterDelay:0.5];
+}
 
+- (void)updateDestinationInfo
+{
+    _placeNameLabel.text = _destinationPlaceInfo.name;
+    _placeAddressLabel.text = _destinationPlaceInfo.address;
+}
 
+- (void)updateUserLocation
+{
+    [_mapView setShowsUserLocation:YES];
 }
 
 - (void)showAlertView:(NSString*)title widthMessage:(NSString*)message
@@ -48,7 +92,9 @@
 {
     QErrorCode errCode = [routeSearchResult errorCode];
     NSLog(@"get bus res %lu",(unsigned long)errCode);
-    if (errCode == QRouteSearchResultBusList) {
+    if (errCode == QBusLineSearchResultBusInfo) {
+        id data = [routeSearchResult data];
+    } else if (errCode == QRouteSearchResultBusList) {
         
         NSMutableString* msg = [[NSMutableString alloc] init];
         [msg appendString:@"start:\n"];
@@ -68,8 +114,8 @@
         count = 0;
         for (QPlaceInfo* info in [choice endList]) {
             
-            [msg appendFormat:@"%d.name=%@,address=%@,coor={%lf,%lf}\n",
-             count,info.name,info.address,info.coordinate.longitude,info.coordinate.latitude];
+            [msg appendFormat:@"%ld.name=%@,address=%@,coor={%lf,%lf}\n",
+             (long)count,info.name,info.address,info.coordinate.longitude,info.coordinate.latitude];
             ++count;
         }
         
@@ -83,9 +129,9 @@
         
         if (startList.count > 0 && endList.count > 0 ) {
             [_search busSearchWithLocation:@"上海"
-                                     start:  [startList objectAtIndex:0]
-                                       end:[endList objectAtIndex:0]
-                         withBusSearchType:QBusSearchShortCut];
+                                     start:_userLocationPlaceInfo
+                                       end:_destinationPlaceInfo
+                         withBusSearchType:QBusSearchLessTransfer];
         }
         
     } else if (errCode == QRouteSearchResultBusResult) {
@@ -102,16 +148,34 @@
         pa.title = [NSString stringWithFormat:@"终点:%@",plan.end.name];
         [_mapView addAnnotation:pa];
         
+        
+        
         NSArray* routeList = [plan routeInfoList];
         
         for (QRouteInfoForBus* route in routeList) {
             
             QPolyline* pl = [QPolyline polylineWithCoordinates:route.routeNodeList
                                                          count:route.routeNodeCount];
+            NSLog(@"路线选择 : 时间:%d, 路程:%d, 类型:%d, coor:[%f,%f]", route.time, route.distance, route.type,route.routeNodeList->latitude, route.routeNodeList->longitude);
             [_mapView addOverlay:pl];
+            
+            QPointAnnotation* pointAnnotation = [[QPointAnnotation alloc] init];
+            pointAnnotation.coordinate = CLLocationCoordinate2DMake(route.routeNodeList->latitude, route.routeNodeList->longitude);
+            pointAnnotation.title = [NSString stringWithFormat:@"起点:%@",plan.start.name];
+
             
             _mapView.region = QCoordinateRegionMake( _mapView.centerCoordinate, QCoordinateSpanMake(0.1, 0.1));
             
+            for (QRouteSegmentForBus *busSegment in route.routeSegmentList) {
+                NSLog(@"路段信息distance:%lu,endIndex:%ld,name:%@,startIndex:%ld,stationNum:%lu,time:%lu,type:%u,walkDirection:%u,whereGetOff:%@,whereGetOn:%@", (unsigned long)busSegment.distance,(long)busSegment.endIndex,busSegment.name, (long)busSegment.startIndex,(unsigned long)busSegment.stationNum,(unsigned long)busSegment.time,busSegment.type,busSegment.walkDirection,busSegment.whereGetOff,busSegment.whereGetOn);
+                
+                QPointAnnotation* pointAnnotation = [[QPointAnnotation alloc] init];
+                pointAnnotation.coordinate = CLLocationCoordinate2DMake(route.routeNodeList->latitude, route.routeNodeList->longitude);
+                pointAnnotation.title = [NSString stringWithFormat:@"起点:%@",plan.start.name];
+                
+                [_mapView addAnnotation:pa];
+
+            }
             break;
         }
     }
@@ -144,7 +208,7 @@
         QPolylineView* polylineView = [[QPolylineView alloc] initWithPolyline:overlay];
         
         polylineView.lineWidth = 2.0;
-        polylineView.strokeColor =  [UIColor blueColor];//[[UIColor redColor] colorWithAlphaComponent:0.5];
+        polylineView.strokeColor =  [UIColor redColor];//[[UIColor redColor] colorWithAlphaComponent:0.5];
         
         return polylineView;
     }
@@ -163,10 +227,7 @@
 
 - (void)mapView:(QMapView *)mapView didUpdateUserLocation:(QUserLocation *)userLocation
 {
-    //刷新位置
-    NSLog(@"userlocation chanage lo=%f,lat= %f",
-          [userLocation location].coordinate.longitude,
-          [userLocation location].coordinate.latitude);
+    
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
@@ -175,19 +236,42 @@
 }
 
 - (IBAction)myPositionButtonTap:(id)sender {
-    [_mapView setShowsUserLocation:YES];
-
+    [self.locationManager startUpdatingLocation];
 //    QPointAnnotation* annotation = [[QPointAnnotation alloc]init];
 //    [annotation setCoordinate:CLLocationCoordinate2DMake(31.11, 121.59)];
 //    [annotation setTitle:@"银科大厦"];
 //    [annotation setSubtitle:@"北京市区海淀区苏州街银科大厦"];
     
     //[_mapView addAnnotation:annotation];
-    [_search busSearch:@"上海市"
-                 start:@"上海南站"
-                   end:@"张江高科"
-     withBusSearchType:QBusSearchShortCut];
+//    [_search busSearch:@"上海市"
+//                 start:@"上海南站"
+//                   end:@"张江高科"
+//     withBusSearchType:QBusSearchShortCut];
+    //[self updateUserLocation];
+}
 
+- (void)reverseGeocoder:(QReverseGeocoder *)geocoder didFindPlacemark:(QPlaceMark *)placeMark
+{
+    //查询成功时
+    QPlaceInfo *placeInfo = [[QPlaceInfo alloc] init];
+    placeInfo.name = placeMark.name;
+    placeInfo.address = placeMark.address;
+    placeInfo.coordinate = placeMark.coordinate;
+    //placeInfo.isCity = placeMark.isCity;
+    _userLocationPlaceInfo = placeInfo;
+    
+    [_search busSearchWithLocation:@"上海"
+                             start:_userLocationPlaceInfo
+                               end:_destinationPlaceInfo
+                 withBusSearchType:QBusSearchLessTransfer];
+    [self updateDestinationInfo];
+    NSLog(@"reverse Geocoder success!");
+}
+
+- (void)reverseGeocoder:(QReverseGeocoder *)geocoder didFailWithError:(QErrorCode) error
+{
+    //查询失败时
+    NSLog(@"reverse Geocoder fail!");
 }
 
 @end

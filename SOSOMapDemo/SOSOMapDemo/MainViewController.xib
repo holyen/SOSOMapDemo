@@ -1,37 +1,77 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="5053" systemVersion="14A389" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6250" systemVersion="14A389" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
-        <deployment defaultVersion="1552" identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MainViewController">
             <connections>
                 <outlet property="mapView" destination="bXb-jh-okC" id="IzH-sg-iX9"/>
+                <outlet property="placeAddressLabel" destination="LXc-lU-aEw" id="eVH-eX-4th"/>
+                <outlet property="placeNameLabel" destination="hKM-Jx-5Gp" id="2j8-AN-xjl"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
-            <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+            <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bXb-jh-okC" customClass="QMapView">
-                    <rect key="frame" x="0.0" y="0.0" width="600" height="360"/>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bXb-jh-okC" customClass="QMapView">
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="453"/>
                     <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                 </view>
-                <button appearanceType="aqua" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6sV-Y0-RMU">
-                    <rect key="frame" x="20" y="368" width="60" height="30"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <state key="normal" title="我的位置">
-                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                    </state>
-                    <connections>
-                        <action selector="myPositionButtonTap:" destination="-1" eventType="touchUpInside" id="7Cf-Pj-ZLN"/>
-                    </connections>
-                </button>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Pmh-Pm-3CK">
+                    <rect key="frame" x="0.0" y="453" width="320" height="115"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hKM-Jx-5Gp">
+                            <rect key="frame" x="8" y="8" width="180" height="21"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LXc-lU-aEw">
+                            <rect key="frame" x="8" y="37" width="290" height="21"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6sV-Y0-RMU">
+                            <rect key="frame" x="252" y="4" width="60" height="30"/>
+                            <state key="normal" title="获取路线">
+                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <connections>
+                                <action selector="myPositionButtonTap:" destination="-1" eventType="touchUpInside" id="7Cf-Pj-ZLN"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" red="0.66666666669999997" green="0.62968898659999994" blue="0.48565876689999998" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="115" id="goS-FQ-H0r"/>
+                    </constraints>
+                </view>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="Pmh-Pm-3CK" firstAttribute="top" secondItem="bXb-jh-okC" secondAttribute="bottom" id="011-15-9c3"/>
+                <constraint firstAttribute="trailing" secondItem="bXb-jh-okC" secondAttribute="trailing" id="3gH-M8-HUy"/>
+                <constraint firstItem="Pmh-Pm-3CK" firstAttribute="top" secondItem="bXb-jh-okC" secondAttribute="bottom" id="HDu-W9-Vmm"/>
+                <constraint firstAttribute="trailing" secondItem="Pmh-Pm-3CK" secondAttribute="trailing" id="OnQ-rE-e3l"/>
+                <constraint firstItem="bXb-jh-okC" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="P29-oP-Zb5"/>
+                <constraint firstItem="bXb-jh-okC" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="PDG-hy-4QQ"/>
+                <constraint firstItem="Pmh-Pm-3CK" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="tvm-U5-YdK"/>
+                <constraint firstAttribute="bottom" secondItem="Pmh-Pm-3CK" secondAttribute="bottom" id="yLy-o1-Vyu"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+            <point key="canvasLocation" x="253" y="179"/>
         </view>
     </objects>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination" type="retina4"/>
+    </simulatedMetricsContainer>
 </document>
