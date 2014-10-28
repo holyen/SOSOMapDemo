@@ -62,14 +62,17 @@
     [_mapView setShowsUserLocation:YES];
     [self.locationManager startUpdatingLocation];
     
+    _bottomView.translatesAutoresizingMaskIntoConstraints = YES;
+    CGRect bottomViewRect = _bottomView.frame;
+    bottomViewRect.origin.y = self.view.frame.size.height - 115;
+    _bottomView.frame = bottomViewRect;
     //_routePlan bus
     //[self performSelector:@selector(updateUserLocation) withObject:nil afterDelay:0.5];
 }
 
 - (void)updateDestinationInfo
 {
-    _placeNameLabel.text = _destinationPlaceInfo.name;
-    _placeAddressLabel.text = _destinationPlaceInfo.address;
+    _placeNameLabel.text = [NSString stringWithFormat:@"%@ %@", _destinationPlaceInfo.name, _destinationPlaceInfo.address];
 }
 
 - (void)updateUserLocation
@@ -148,36 +151,26 @@
         pa.title = [NSString stringWithFormat:@"终点:%@",plan.end.name];
         [_mapView addAnnotation:pa];
         
+        _routeInfoForBussArray = [plan routeInfoList];
+        NSArray* routeList = _routeInfoForBussArray;
+        [_tableView reloadData];
         
-        
-        NSArray* routeList = [plan routeInfoList];
-        
-        for (QRouteInfoForBus* route in routeList) {
-            
-            QPolyline* pl = [QPolyline polylineWithCoordinates:route.routeNodeList
-                                                         count:route.routeNodeCount];
-            NSLog(@"路线选择 : 时间:%d, 路程:%d, 类型:%d, coor:[%f,%f]", route.time, route.distance, route.type,route.routeNodeList->latitude, route.routeNodeList->longitude);
-            [_mapView addOverlay:pl];
-            
-            QPointAnnotation* pointAnnotation = [[QPointAnnotation alloc] init];
-            pointAnnotation.coordinate = CLLocationCoordinate2DMake(route.routeNodeList->latitude, route.routeNodeList->longitude);
-            pointAnnotation.title = [NSString stringWithFormat:@"起点:%@",plan.start.name];
+    }
+}
 
-            
-            _mapView.region = QCoordinateRegionMake( _mapView.centerCoordinate, QCoordinateSpanMake(0.1, 0.1));
-            
-            for (QRouteSegmentForBus *busSegment in route.routeSegmentList) {
-                NSLog(@"路段信息distance:%lu,endIndex:%ld,name:%@,startIndex:%ld,stationNum:%lu,time:%lu,type:%u,walkDirection:%u,whereGetOff:%@,whereGetOn:%@", (unsigned long)busSegment.distance,(long)busSegment.endIndex,busSegment.name, (long)busSegment.startIndex,(unsigned long)busSegment.stationNum,(unsigned long)busSegment.time,busSegment.type,busSegment.walkDirection,busSegment.whereGetOff,busSegment.whereGetOn);
-                
-                QPointAnnotation* pointAnnotation = [[QPointAnnotation alloc] init];
-                pointAnnotation.coordinate = CLLocationCoordinate2DMake(route.routeNodeList->latitude, route.routeNodeList->longitude);
-                pointAnnotation.title = [NSString stringWithFormat:@"起点:%@",plan.start.name];
-                
-                [_mapView addAnnotation:pa];
+- (void)drawRouteByQRouteInfoForBus:(QRouteInfoForBus *)route
+{
+    _mapView.region = QCoordinateRegionMake( _mapView.centerCoordinate, QCoordinateSpanMake(0.1, 0.1));
 
-            }
-            break;
-        }
+    [_mapView removeOverlay:_polyline];
+    _polyline = [QPolyline polylineWithCoordinates:route.routeNodeList
+                                             count:route.routeNodeCount];
+    [_mapView addOverlay:_polyline];
+
+    NSLog(@"路线选择 : 时间:%d, 路程:%d, 类型:%d, coor:[%f,%f]", route.time, route.distance, route.type,route.routeNodeList->latitude, route.routeNodeList->longitude);
+    
+    for (QRouteSegmentForBus *busSegment in route.routeSegmentList) {
+        NSLog(@"路段信息distance:%lu,endIndex:%ld,name:%@,startIndex:%ld,stationNum:%lu,time:%lu,type:%u,walkDirection:%u,whereGetOff:%@,whereGetOn:%@", (unsigned long)busSegment.distance,(long)busSegment.endIndex,busSegment.name, (long)busSegment.startIndex,(unsigned long)busSegment.stationNum,(unsigned long)busSegment.time,busSegment.type,busSegment.walkDirection,busSegment.whereGetOff,busSegment.whereGetOn);
     }
 }
 
@@ -274,4 +267,38 @@
     NSLog(@"reverse Geocoder fail!");
 }
 
+- (IBAction)leftBackButtonTap:(id)sender {
+}
+
+- (IBAction)locateButtonTap:(id)sender {
+}
+- (IBAction)showExtandButtonTap:(id)sender {
+    
+    CGRect bottomViewRect = _bottomView.frame;
+    bottomViewRect.size.height = 400;
+    bottomViewRect.origin.y = self.view.frame.size.height - bottomViewRect.size.height;
+    _bottomView.frame = bottomViewRect;
+}
+
+#pragma mark - 
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    return [_routeInfoForBussArray count];
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    static NSString *cellID = @"MapViewController.TableView.cell";
+    RouteCell *cell = [_tableView dequeueReusableCellWithIdentifier:cellID];
+    if (!cell) {
+        cell = [[RouteCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellID routeInfoForBus:[_routeInfoForBussArray objectAtIndex:indexPath.row]];
+    }
+    return cell;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    QRouteInfoForBus *routeInfoForBus = [_routeInfoForBussArray objectAtIndex:indexPath.row];
+    [self drawRouteByQRouteInfoForBus:routeInfoForBus];
+}
 @end

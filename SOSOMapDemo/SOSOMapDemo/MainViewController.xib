@@ -7,9 +7,10 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MainViewController">
             <connections>
+                <outlet property="bottomView" destination="Pmh-Pm-3CK" id="myN-uO-P5u"/>
                 <outlet property="mapView" destination="bXb-jh-okC" id="IzH-sg-iX9"/>
-                <outlet property="placeAddressLabel" destination="LXc-lU-aEw" id="eVH-eX-4th"/>
                 <outlet property="placeNameLabel" destination="hKM-Jx-5Gp" id="2j8-AN-xjl"/>
+                <outlet property="tableView" destination="tA9-fr-xbj" id="v6z-do-tEz"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -22,17 +23,29 @@
                     <rect key="frame" x="0.0" y="0.0" width="320" height="453"/>
                     <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                 </view>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Pmh-Pm-3CK">
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bUL-OM-Z9C">
+                    <rect key="frame" x="-2" y="10" width="27" height="30"/>
+                    <state key="normal" backgroundImage="mapTabRightButton.png">
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="leftBackButtonTap:" destination="-1" eventType="touchUpInside" id="gsr-gf-zCv"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ISs-yO-zaZ">
+                    <rect key="frame" x="8" y="407" width="32" height="32"/>
+                    <state key="normal" backgroundImage="mapTabButton.png">
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="locateButtonTap:" destination="-1" eventType="touchUpInside" id="Bcz-V9-W1Y"/>
+                    </connections>
+                </button>
+                <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Pmh-Pm-3CK">
                     <rect key="frame" x="0.0" y="453" width="320" height="115"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hKM-Jx-5Gp">
-                            <rect key="frame" x="8" y="8" width="180" height="21"/>
-                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                            <nil key="highlightedColor"/>
-                        </label>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LXc-lU-aEw">
-                            <rect key="frame" x="8" y="37" width="290" height="21"/>
+                            <rect key="frame" x="8" y="8" width="236" height="21"/>
                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                             <nil key="highlightedColor"/>
@@ -46,29 +59,49 @@
                                 <action selector="myPositionButtonTap:" destination="-1" eventType="touchUpInside" id="7Cf-Pj-ZLN"/>
                             </connections>
                         </button>
+                        <tableView clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="tA9-fr-xbj">
+                            <rect key="frame" x="8" y="37" width="304" height="70"/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <connections>
+                                <outlet property="dataSource" destination="-1" id="XCb-gn-OGV"/>
+                                <outlet property="delegate" destination="-1" id="m5I-eU-0gL"/>
+                            </connections>
+                        </tableView>
+                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="imv-4U-MUa">
+                            <rect key="frame" x="137" y="-1" width="46" height="30"/>
+                            <state key="normal" title="Button">
+                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <connections>
+                                <action selector="showExtandButtonTap:" destination="-1" eventType="touchUpInside" id="UVp-GJ-BW6"/>
+                            </connections>
+                        </button>
                     </subviews>
-                    <color key="backgroundColor" red="0.66666666669999997" green="0.62968898659999994" blue="0.48565876689999998" alpha="1" colorSpace="calibratedRGB"/>
+                    <color key="backgroundColor" red="1" green="0.67525436144905671" blue="0.60894085543568632" alpha="1" colorSpace="calibratedRGB"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="115" id="goS-FQ-H0r"/>
+                        <constraint firstItem="tA9-fr-xbj" firstAttribute="top" secondItem="Pmh-Pm-3CK" secondAttribute="top" constant="37" id="5ma-IF-UfQ"/>
+                        <constraint firstAttribute="bottom" secondItem="tA9-fr-xbj" secondAttribute="bottom" id="94W-iM-j92"/>
+                        <constraint firstAttribute="trailing" secondItem="tA9-fr-xbj" secondAttribute="trailing" id="I37-S7-sLI"/>
+                        <constraint firstItem="tA9-fr-xbj" firstAttribute="leading" secondItem="Pmh-Pm-3CK" secondAttribute="leading" id="RzW-wv-Be4"/>
                     </constraints>
                 </view>
             </subviews>
-            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
             <constraints>
-                <constraint firstItem="Pmh-Pm-3CK" firstAttribute="top" secondItem="bXb-jh-okC" secondAttribute="bottom" id="011-15-9c3"/>
-                <constraint firstAttribute="trailing" secondItem="bXb-jh-okC" secondAttribute="trailing" id="3gH-M8-HUy"/>
-                <constraint firstItem="Pmh-Pm-3CK" firstAttribute="top" secondItem="bXb-jh-okC" secondAttribute="bottom" id="HDu-W9-Vmm"/>
-                <constraint firstAttribute="trailing" secondItem="Pmh-Pm-3CK" secondAttribute="trailing" id="OnQ-rE-e3l"/>
-                <constraint firstItem="bXb-jh-okC" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="P29-oP-Zb5"/>
-                <constraint firstItem="bXb-jh-okC" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="PDG-hy-4QQ"/>
-                <constraint firstItem="Pmh-Pm-3CK" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="tvm-U5-YdK"/>
-                <constraint firstAttribute="bottom" secondItem="Pmh-Pm-3CK" secondAttribute="bottom" id="yLy-o1-Vyu"/>
+                <constraint firstAttribute="trailing" secondItem="bXb-jh-okC" secondAttribute="trailing" id="01r-jR-ORh"/>
+                <constraint firstItem="bXb-jh-okC" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="PHm-dR-O5f"/>
+                <constraint firstItem="bXb-jh-okC" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="SKf-aD-sBF"/>
+                <constraint firstAttribute="bottom" secondItem="bXb-jh-okC" secondAttribute="bottom" constant="115" id="rts-Xo-Orr"/>
             </constraints>
             <nil key="simulatedStatusBarMetrics"/>
             <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
-            <point key="canvasLocation" x="253" y="179"/>
+            <point key="canvasLocation" x="359" y="236"/>
         </view>
     </objects>
+    <resources>
+        <image name="mapTabButton.png" width="20" height="30"/>
+        <image name="mapTabRightButton.png" width="27" height="30"/>
+    </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

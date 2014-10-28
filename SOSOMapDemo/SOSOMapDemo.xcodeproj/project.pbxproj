@@ -31,6 +31,19 @@
 		BC6462E919F8A9B600D6DB9B /* MainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BC6462E719F8A9B600D6DB9B /* MainViewController.xib */; };
 		BC95237219F8C3F500DE91C3 /* libTencentMapAPILib.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BC95237119F8C3F500DE91C3 /* libTencentMapAPILib.a */; };
 		BC95237419F8CFB000DE91C3 /* libstdc++.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = BC95237319F8CFB000DE91C3 /* libstdc++.dylib */; };
+		BCAB5E9219FF6BFB00A92AFC /* arrow_merchant_detail_map_highlighted@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BCAB5E8619FF6BFB00A92AFC /* arrow_merchant_detail_map_highlighted@2x.png */; };
+		BCAB5E9319FF6BFB00A92AFC /* arrow_merchant_detail_map_normal@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BCAB5E8719FF6BFB00A92AFC /* arrow_merchant_detail_map_normal@2x.png */; };
+		BCAB5E9419FF6BFB00A92AFC /* icon_map_locate.png in Resources */ = {isa = PBXBuildFile; fileRef = BCAB5E8819FF6BFB00A92AFC /* icon_map_locate.png */; };
+		BCAB5E9519FF6BFB00A92AFC /* icon_map_locate@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BCAB5E8919FF6BFB00A92AFC /* icon_map_locate@2x.png */; };
+		BCAB5E9619FF6BFB00A92AFC /* mapTabButton.png in Resources */ = {isa = PBXBuildFile; fileRef = BCAB5E8A19FF6BFB00A92AFC /* mapTabButton.png */; };
+		BCAB5E9719FF6BFB00A92AFC /* mapTabButton@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BCAB5E8B19FF6BFB00A92AFC /* mapTabButton@2x.png */; };
+		BCAB5E9819FF6BFB00A92AFC /* mapTabButtonSelected.png in Resources */ = {isa = PBXBuildFile; fileRef = BCAB5E8C19FF6BFB00A92AFC /* mapTabButtonSelected.png */; };
+		BCAB5E9919FF6BFB00A92AFC /* mapTabButtonSelected@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BCAB5E8D19FF6BFB00A92AFC /* mapTabButtonSelected@2x.png */; };
+		BCAB5E9A19FF6BFB00A92AFC /* mapTabRightButton.png in Resources */ = {isa = PBXBuildFile; fileRef = BCAB5E8E19FF6BFB00A92AFC /* mapTabRightButton.png */; };
+		BCAB5E9B19FF6BFB00A92AFC /* mapTabRightButton@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BCAB5E8F19FF6BFB00A92AFC /* mapTabRightButton@2x.png */; };
+		BCAB5E9C19FF6BFB00A92AFC /* mapTabRightButtonSelected.png in Resources */ = {isa = PBXBuildFile; fileRef = BCAB5E9019FF6BFB00A92AFC /* mapTabRightButtonSelected.png */; };
+		BCAB5E9D19FF6BFB00A92AFC /* mapTabRightButtonSelected@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BCAB5E9119FF6BFB00A92AFC /* mapTabRightButtonSelected@2x.png */; };
+		BCAB5EA019FF759800A92AFC /* RouteCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BCAB5E9F19FF759800A92AFC /* RouteCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -106,6 +119,20 @@
 		BC6462E719F8A9B600D6DB9B /* MainViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainViewController.xib; sourceTree = "<group>"; };
 		BC95237119F8C3F500DE91C3 /* libTencentMapAPILib.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libTencentMapAPILib.a; sourceTree = "<group>"; };
 		BC95237319F8CFB000DE91C3 /* libstdc++.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libstdc++.dylib"; path = "usr/lib/libstdc++.dylib"; sourceTree = SDKROOT; };
+		BCAB5E8619FF6BFB00A92AFC /* arrow_merchant_detail_map_highlighted@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "arrow_merchant_detail_map_highlighted@2x.png"; sourceTree = "<group>"; };
+		BCAB5E8719FF6BFB00A92AFC /* arrow_merchant_detail_map_normal@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "arrow_merchant_detail_map_normal@2x.png"; sourceTree = "<group>"; };
+		BCAB5E8819FF6BFB00A92AFC /* icon_map_locate.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_map_locate.png; sourceTree = "<group>"; };
+		BCAB5E8919FF6BFB00A92AFC /* icon_map_locate@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_map_locate@2x.png"; sourceTree = "<group>"; };
+		BCAB5E8A19FF6BFB00A92AFC /* mapTabButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mapTabButton.png; sourceTree = "<group>"; };
+		BCAB5E8B19FF6BFB00A92AFC /* mapTabButton@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "mapTabButton@2x.png"; sourceTree = "<group>"; };
+		BCAB5E8C19FF6BFB00A92AFC /* mapTabButtonSelected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mapTabButtonSelected.png; sourceTree = "<group>"; };
+		BCAB5E8D19FF6BFB00A92AFC /* mapTabButtonSelected@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "mapTabButtonSelected@2x.png"; sourceTree = "<group>"; };
+		BCAB5E8E19FF6BFB00A92AFC /* mapTabRightButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mapTabRightButton.png; sourceTree = "<group>"; };
+		BCAB5E8F19FF6BFB00A92AFC /* mapTabRightButton@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "mapTabRightButton@2x.png"; sourceTree = "<group>"; };
+		BCAB5E9019FF6BFB00A92AFC /* mapTabRightButtonSelected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mapTabRightButtonSelected.png; sourceTree = "<group>"; };
+		BCAB5E9119FF6BFB00A92AFC /* mapTabRightButtonSelected@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "mapTabRightButtonSelected@2x.png"; sourceTree = "<group>"; };
+		BCAB5E9E19FF759800A92AFC /* RouteCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RouteCell.h; sourceTree = "<group>"; };
+		BCAB5E9F19FF759800A92AFC /* RouteCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RouteCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -172,6 +199,7 @@
 		BC64627719F8A02600D6DB9B /* SOSOMapDemo */ = {
 			isa = PBXGroup;
 			children = (
+				BCAB5E8519FF6BFB00A92AFC /* Resource */,
 				BC64629E19F8A08000D6DB9B /* libs */,
 				BC64627C19F8A02600D6DB9B /* AppDelegate.h */,
 				BC64627D19F8A02600D6DB9B /* AppDelegate.m */,
@@ -182,6 +210,8 @@
 				BC6462E519F8A9B600D6DB9B /* MainViewController.h */,
 				BC6462E619F8A9B600D6DB9B /* MainViewController.m */,
 				BC6462E719F8A9B600D6DB9B /* MainViewController.xib */,
+				BCAB5E9E19FF759800A92AFC /* RouteCell.h */,
+				BCAB5E9F19FF759800A92AFC /* RouteCell.m */,
 			);
 			path = SOSOMapDemo;
 			sourceTree = "<group>";
@@ -279,6 +309,25 @@
 			path = lib;
 			sourceTree = "<group>";
 		};
+		BCAB5E8519FF6BFB00A92AFC /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				BCAB5E8619FF6BFB00A92AFC /* arrow_merchant_detail_map_highlighted@2x.png */,
+				BCAB5E8719FF6BFB00A92AFC /* arrow_merchant_detail_map_normal@2x.png */,
+				BCAB5E8819FF6BFB00A92AFC /* icon_map_locate.png */,
+				BCAB5E8919FF6BFB00A92AFC /* icon_map_locate@2x.png */,
+				BCAB5E8A19FF6BFB00A92AFC /* mapTabButton.png */,
+				BCAB5E8B19FF6BFB00A92AFC /* mapTabButton@2x.png */,
+				BCAB5E8C19FF6BFB00A92AFC /* mapTabButtonSelected.png */,
+				BCAB5E8D19FF6BFB00A92AFC /* mapTabButtonSelected@2x.png */,
+				BCAB5E8E19FF6BFB00A92AFC /* mapTabRightButton.png */,
+				BCAB5E8F19FF6BFB00A92AFC /* mapTabRightButton@2x.png */,
+				BCAB5E9019FF6BFB00A92AFC /* mapTabRightButtonSelected.png */,
+				BCAB5E9119FF6BFB00A92AFC /* mapTabRightButtonSelected@2x.png */,
+			);
+			path = Resource;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -359,13 +408,25 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BCAB5E9519FF6BFB00A92AFC /* icon_map_locate@2x.png in Resources */,
 				BC6462CB19F8A08100D6DB9B /* mapconfig.dat in Resources */,
 				BC6462CD19F8A08100D6DB9B /* TencentStreetView.bundle in Resources */,
 				BC64628419F8A02600D6DB9B /* Main.storyboard in Resources */,
+				BCAB5E9C19FF6BFB00A92AFC /* mapTabRightButtonSelected.png in Resources */,
 				BC64628919F8A02600D6DB9B /* LaunchScreen.xib in Resources */,
+				BCAB5E9319FF6BFB00A92AFC /* arrow_merchant_detail_map_normal@2x.png in Resources */,
+				BCAB5E9919FF6BFB00A92AFC /* mapTabButtonSelected@2x.png in Resources */,
+				BCAB5E9A19FF6BFB00A92AFC /* mapTabRightButton.png in Resources */,
+				BCAB5E9219FF6BFB00A92AFC /* arrow_merchant_detail_map_highlighted@2x.png in Resources */,
+				BCAB5E9B19FF6BFB00A92AFC /* mapTabRightButton@2x.png in Resources */,
 				BC6462CC19F8A08100D6DB9B /* TencentMapAPI.bundle in Resources */,
+				BCAB5E9619FF6BFB00A92AFC /* mapTabButton.png in Resources */,
+				BCAB5E9719FF6BFB00A92AFC /* mapTabButton@2x.png in Resources */,
+				BCAB5E9D19FF6BFB00A92AFC /* mapTabRightButtonSelected@2x.png in Resources */,
 				BC6462E919F8A9B600D6DB9B /* MainViewController.xib in Resources */,
+				BCAB5E9819FF6BFB00A92AFC /* mapTabButtonSelected.png in Resources */,
 				BC64628619F8A02600D6DB9B /* Images.xcassets in Resources */,
+				BCAB5E9419FF6BFB00A92AFC /* icon_map_locate.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -384,6 +445,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BC64627E19F8A02600D6DB9B /* AppDelegate.m in Sources */,
+				BCAB5EA019FF759800A92AFC /* RouteCell.m in Sources */,
 				BC64627B19F8A02600D6DB9B /* main.m in Sources */,
 				BC6462E819F8A9B600D6DB9B /* MainViewController.m in Sources */,
 			);
